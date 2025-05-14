@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Ticket</title>
+</head>
+<body>
+    <h1>Update Ticket</h1>
+    <form method="POST">
+        <label for="title">Title:</label>
+        <input type="text" name="title" value="{{ ticket['title'] }}" required><br><br>
+
+        <label for="description">Description:</label><br>
+        <textarea name="description" rows="4" cols="50">{{ ticket['description'] }}</textarea><br><br>
+
+        <label for="status">Status:</label>
+        <select name="status">
+            <option value="Open" {% if ticket['status'] == 'Open' %}selected{% endif %}>Open</option>
+            <option value="In Progress" {% if ticket['status'] == 'In Progress' %}selected{% endif %}>In Progress</option>
+            <option value="Closed" {% if ticket['status'] == 'Closed' %}selected{% endif %}>Closed</option>
+        </select><br><br>
+
+        <button type="submit">Update Ticket</button>
+    </form>
+    <a href="{{ url_for('main.list_tickets') }}">Back to Tickets</a>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Logged In</title>
+</head>
+<body>
+    <h1>Welcome to the Helpdesk</h1>
+    <ul>
+        <li><a href="{{ url_for('main.dashboard') }}">Dashboard</a></li>
+        <li><a href="{{ url_for('main.list_tickets') }}">View Tickets</a></li>
+        <li><a href="{{ url_for('main.create_ticket') }}">Create Ticket</a></li>
+        <li><a href="{{ url_for('main.logout') }}">Logout</a></li>
+    </ul>
+</body>
+</html>

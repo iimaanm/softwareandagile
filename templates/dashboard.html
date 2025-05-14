@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Welcome to the Dashboard</h1>
+    <p>Role: {{ role }}</p>
+    <ul>
+        <li>Total Tickets: {{ total_tickets }}</li>
+        <li>Open Tickets: {{ open_tickets }}</li>
+        <li>Closed Tickets: {{ closed_tickets }}</li>
+    </ul>
+
+    <h3>Navigation</h3>
+    <ul>
+        <li><a href="{{ url_for('main.list_tickets') }}">View Tickets</a></li>
+        <li><a href="{{ url_for('main.create_ticket') }}">Create Ticket</a></li>
+        {% if role == 'admin' %}
+        <li><a href="{{ url_for('main.manage_users') }}">Manage Users</a></li>
+        {% endif %}
+        <li><a href="{{ url_for('main.logout') }}">Logout</a></li>
+    </ul>
+</body>
+</html>
